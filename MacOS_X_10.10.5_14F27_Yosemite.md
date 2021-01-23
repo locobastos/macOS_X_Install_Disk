@@ -1,4 +1,4 @@
-# Apple macOS X 10.10 Yosemite
+# Apple macOS X 10.10.5 (14F27) Yosemite
 
 In this guide, you will:
 
@@ -7,7 +7,7 @@ In this guide, you will:
 -   Create a Virtual Machine using VirtualBox,
 -   Install Yosemite from the installation disk.
 
-## Create the macOS X 10.10 Yosemite Installation Disk file from official source
+## Create the macOS X 10.10.5 Yosemite Installation Disk file from official source
 
 As the `hdiutil` tool is proprietary, we do not have the choice to use an macOS to create the ISO file. I've used macOS 10.10 to create this ISO.
 
@@ -15,7 +15,7 @@ As the `hdiutil` tool is proprietary, we do not have the choice to use an macOS 
 
         http://updates-http.cdn-apple.com/2019/cert/061-41343-20191023-02465f92-3ab5-4c92-bfe2-b725447a070d/InstallMacOSX.dmg
 
-    I've renamed it "MacOS_X_10.10_Yosemite_Downloaded_Disk.dmg".
+    I've renamed it "MacOS_X_10.10.5_14F27_Yosemite_Downloaded_Disk.dmg".
 
 2. Check the checksum of the downloaded DMG to be sure it is safe.
 
@@ -24,7 +24,7 @@ As the `hdiutil` tool is proprietary, we do not have the choice to use an macOS 
         SHA1   = C542681961CC7FAFB9C15BFD4AF152A3A57F07FA
         SHA256 = DE869907CE4289FE948CBD2DEA7479FF9C369BBF47B06D5CB5290D78FB2932C6
 
-3. Insert the disk "MacOS_X_10.10_Yosemite_Downloaded_Disk.dmg".
+3. Insert the disk "MacOS_X_10.10.5_14F27_Yosemite_Downloaded_Disk.dmg".
    
 4. Open "InstallMacOSX.pkg".
 
@@ -63,11 +63,11 @@ As the `hdiutil` tool is proprietary, we do not have the choice to use an macOS 
         hdiutil resize -size $(hdiutil resize -limits ~/Downloads/BaseSystem_UDSP.sparseimage | tail -n 1 | awk '{ print $1 }')b ~/Downloads/BaseSystem_UDSP.sparseimage
         
         # Convert the sparseimage to DMG file.
-        hdiutil convert -format UDZO -o ~/Downloads/MacOS_X_10.10_Yosemite_Install_Disk ~/Downloads/BaseSystem_UDSP.sparseimage
+        hdiutil convert -format UDZO -o ~/Downloads/MacOS_X_10.10.5_14F27_Yosemite_Install_Disk ~/Downloads/BaseSystem_UDSP.sparseimage
 
 ## Create a new Virtual Machine from this ISO
 
-1.  Create a new virtual machine, give the name you want, I called mine "macOS_X_10.10_Yosemite".
+1.  Create a new virtual machine, give the name you want, I called mine "macOS_X_10.10.5_Yosemite".
     You will need its exact name during the step 8.
 
 2.  Give it enough RAM, at least 4096 MB.
@@ -78,14 +78,14 @@ As the `hdiutil` tool is proprietary, we do not have the choice to use an macOS 
 
 5.  In the VM's display settings, use 128 MB of video memory.
 
-6.  In the VM's storage settings, attach the MacOS_X_10.10_Yosemite_Install_Disk.dmg to the empty CD/DVD drive.
+6.  In the VM's storage settings, attach the MacOS_X_10.10.5_14F27_Yosemite_Install_Disk.dmg to the empty CD/DVD drive.
 
 7.  Click OK then close VirtualBox
 
 8.  Open a command prompt (cmd.exe) as administrator, then:
 
         cd "C:\Program Files\Oracle\VirtualBox"
-        SET VM_NAME="macOS_X_10.10_Yosemite"
+        SET VM_NAME="macOS_X_10.10.5_Yosemite"
         VBoxManage.exe modifyvm "%VM_NAME%" --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
         VBoxManage.exe setextradata "%VM_NAME%" "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "iMac11,3"
         VBoxManage.exe setextradata "%VM_NAME%" "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion" "1.0"
