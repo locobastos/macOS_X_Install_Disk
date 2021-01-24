@@ -96,7 +96,7 @@ As the `hdiutil` tool is proprietary, we do not have the choice to use an macOS 
 
 9.  Close the command prompt, run VirtualBox and start your virtual machine.
 
-## Install macOS X 10.10.6 El Capitan
+## Install macOS X 10.11.6 El Capitan
 
 ### Prepare the system disk
 
