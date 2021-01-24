@@ -79,7 +79,7 @@ As the `hdiutil` tool is proprietary, we do not have the choice to use an macOS 
 
 5.  In the VM's display settings, use 128 MB of video memory.
 
-6.  In the VM's storage settings, attach the macOS_X_10.10.6-15G31_El_Capitan_Install_Disk.dmg to the empty CD/DVD drive.
+6.  In the VM's storage settings, attach the macOS_X_10.11.6-15G31_El_Capitan_Install_Disk.dmg to the empty CD/DVD drive.
 
 7.  Click OK then close VirtualBox
 
