@@ -4,3 +4,4 @@ Procedures to create bootable DMG (Similar to an ISO file) to use with VirtualBo
 
 1.  [Apple macOS X 10.10.5-14F27 Yosemite](https://github.com/locobastos/macOS_X_Install_Disk/blob/main/macOS_X_10.10.5-14F27_Yosemite_README.md)
 2.  [Apple macOS X 10.11.6-15G31 El Capitan](https://github.com/locobastos/macOS_X_Install_Disk/blob/main/macOS_X_10.11.6-15G31_El_Capitan_README.md)
+3.  [Apple macOS X 10.12.6-16G29 Sierra](https://github.com/locobastos/macOS_X_Install_Disk/blob/main/macOS_X_10.12.6-16G29_Sierra_README.md)
