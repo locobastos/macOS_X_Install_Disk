@@ -61,9 +61,9 @@ rm -rf "${SCRIPT_DIR}/InstallESD/" "${SCRIPT_DIR}/BaseSystem_UDSP/" "${SCRIPT_DI
 hdiutil resize -size $(hdiutil resize -limits "${SCRIPT_DIR}/BaseSystem_UDSP.sparseimage" | tail -n 1 | awk '{ print $1 }')b "${SCRIPT_DIR}/BaseSystem_UDSP.sparseimage"
 
 #----- Convert the sparseimage to a DMG file.
-hdiutil convert -format UDZO -o "${SCRIPT_DIR}/macOS_X_10.10.5-14F27_Yosemite_Install_Disk" "${SCRIPT_DIR}/BaseSystem_UDSP.sparseimage"
+hdiutil convert -format UDZO -o "${SCRIPT_DIR}/macOS_X_10.11.6-15G31_El_Capitan_Install_Disk" "${SCRIPT_DIR}/BaseSystem_UDSP.sparseimage"
 
 #----- Convert the sparseimage to an ISO file.
-hdiutil convert -format UDTO -o "${SCRIPT_DIR}/macOS_X_10.10.5-14F27_Yosemite_Install_Disk" "${SCRIPT_DIR}/BaseSystem_UDSP.sparseimage"
-mv "${SCRIPT_DIR}/macOS_X_10.10.5-14F27_Yosemite_Install_Disk.cdr" "${SCRIPT_DIR}/macOS_X_10.10.5-14F27_Yosemite_Install_Disk.iso"
+hdiutil convert -format UDTO -o "${SCRIPT_DIR}/macOS_X_10.11.6-15G31_El_Capitan_Install_Disk" "${SCRIPT_DIR}/BaseSystem_UDSP.sparseimage"
+mv "${SCRIPT_DIR}/macOS_X_10.11.6-15G31_El_Capitan_Install_Disk.cdr" "${SCRIPT_DIR}/macOS_X_10.11.6-15G31_El_Capitan_Install_Disk.iso"
 rm -f "${SCRIPT_DIR}/BaseSystem_UDSP.sparseimage"
