@@ -9,7 +9,7 @@ In this guide, you will
 
 ## Create the macOS X 10.10.5 Yosemite Install Disk from official sources
 
-As the `hdiutil` tool is proprietary, we do not have the choice to use a macOS to create the ISO file. I have used macOS 10.10 to create this ISO.
+As the `hdiutil` tool is proprietary, we do not have the choice to use a macOS to create the ISO file. I have used macOS 13.6.1 to create this ISO.
 
 1.  Download the InstallMacOSX.dmg from Apple's servers.
 
@@ -65,6 +65,7 @@ As the `hdiutil` tool is proprietary, we do not have the choice to use a macOS t
         
         # Convert the sparseimage to a DMG file.
         hdiutil convert -format UDZO -o ~/Downloads/macOS_X_10.10.5-14F27_Yosemite_Install_Disk ~/Downloads/BaseSystem_UDSP.sparseimage
+
 ## Create a new Virtual Machine from this install disk
 
 1.  Create a new virtual machine, give the name you want, I called mine "macOS_X_10.10.5_Yosemite".
@@ -91,7 +92,7 @@ As the `hdiutil` tool is proprietary, we do not have the choice to use a macOS t
         VBoxManage.exe setextradata "%VM_NAME%" "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion" "1.0"
         VBoxManage.exe setextradata "%VM_NAME%" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Iloveapple"
         VBoxManage.exe setextradata "%VM_NAME%" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
-        VBoxManage.exe setextradata "%VM_NAME%" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
+        VBoxManage.exe setextradata "%VM_NAME%" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 0
 
 9.  Close the command prompt, run VirtualBox and start your virtual machine.
 
