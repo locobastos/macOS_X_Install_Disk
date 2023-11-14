@@ -55,7 +55,7 @@ cp -p "${SCRIPT_DIR}"/InstallESD/BaseSystem.* "${SCRIPT_DIR}/BaseSystem_UDSP/"
 #----- Dismount both image (InstallESD=source, BaseSystem_UDSP=destination).
 hdiutil detach "${SCRIPT_DIR}/InstallESD/"
 hdiutil detach "${SCRIPT_DIR}/BaseSystem_UDSP/"
-rm -rf "${SCRIPT_DIR}/InstallESD/" "${SCRIPT_DIR}/BaseSystem_UDSP/" "${SCRIPT_DIR}/InstallMacOSX/"
+rm -rf "${SCRIPT_DIR}/InstallMacOSX/"
 
 #----- Reduce the image size.
 hdiutil resize -size $(hdiutil resize -limits "${SCRIPT_DIR}/BaseSystem_UDSP.sparseimage" | tail -n 1 | awk '{ print $1 }')b "${SCRIPT_DIR}/BaseSystem_UDSP.sparseimage"
