@@ -76,18 +76,9 @@ As the `hdiutil` tool is proprietary, we do not have the choice to use an macOS 
         # Convert the image to save space.
         hdiutil convert -o macOS_X_10.13.6-17G66_High_Sierra_Install_Disk -format UDZO macOS_10.13.6_Temp_Disk.dmg
 
-
-
-
-
-
-
-
-
-
 ## Create a new Virtual Machine from this install disk
 
-1.  Create a new virtual machine, give the name you want, I called mine "macOS_X_10.12.6-16G29_Sierra".
+1.  Create a new virtual machine, give the name you want, I called mine "macOS_X_10.13.6-17G66_High_Sierra".
    You will need its name during the step 8.
 
 2.  Give it enough RAM, at least 4096 MB.
@@ -98,25 +89,25 @@ As the `hdiutil` tool is proprietary, we do not have the choice to use an macOS 
 
 5.  In the VM's display settings, use 128 MB of video memory.
 
-6.  In the VM's storage settings, attach the macOS_X_10.12.6-16G29_Sierra_Install_Disk.dmg to the empty CD/DVD drive.
+6.  In the VM's storage settings, attach the macOS_X_10.13.6-17G66_High_Sierra_Install_Disk.dmg to the empty CD/DVD drive.
 
 7.  Click OK then close VirtualBox
 
 8.  Open a command prompt (cmd.exe) as administrator, then:
 
         cd "C:\Program Files\Oracle\VirtualBox"
-        SET VM_NAME="macOS_X_10.12.6-16G29_Sierra"
+        SET VM_NAME="macOS_X_10.13.6-17G66_High_Sierra"
         VBoxManage.exe modifyvm "%VM_NAME%" --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
         VBoxManage.exe setextradata "%VM_NAME%" "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "iMac11,3"
         VBoxManage.exe setextradata "%VM_NAME%" "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion" "1.0"
-        VBoxManage.exe setextradata "%VM_NAME%" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Mac-F22589C8"
+        VBoxManage.exe setextradata "%VM_NAME%" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Iloveapple"
         VBoxManage.exe setextradata "%VM_NAME%" "VBoxInternal/Devices/efi/0/Config/DmiSystemSerial" "CK1156I6DB6"
         VBoxManage.exe setextradata "%VM_NAME%" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
-        VBoxManage.exe setextradata "%VM_NAME%" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
+        VBoxManage.exe setextradata "%VM_NAME%" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 0
 
 9.  Close the command prompt, run VirtualBox and start your virtual machine.
 
-## Install macOS X 10.12.6 Sierra
+## Install macOS X 10.13.6 High Sierra
 
 ### Prepare the system disk
 
