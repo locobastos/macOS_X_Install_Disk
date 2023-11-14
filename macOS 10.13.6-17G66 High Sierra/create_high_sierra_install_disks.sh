@@ -63,10 +63,8 @@ rm -f "${SCRIPT_DIR}/BaseSystem_UDSP/System/Installation/Packages"
 #----- Copy the real Packages folder (the missing slash '/', at the end of "Packages" folder name, is very important).
 cp -Rp "${SCRIPT_DIR}/InstallESD/Packages" "${SCRIPT_DIR}/BaseSystem_UDSP/System/Installation/"
 
-# OK ICI
-
 #----- Copy the installer necessary files.
-cp -p "${SCRIPT_DIR}"/InstallESD/BaseSystem.* "${SCRIPT_DIR}/BaseSystem_UDSP/"
+cp -p "${SCRIPT_DIR}/${SETUP_FILE1_NAME}" "${SCRIPT_DIR}/${SETUP_FILE2_NAME}" "${SCRIPT_DIR}/BaseSystem_UDSP/"
 
 #----- Dismount both image (InstallESD=source, BaseSystem_UDSP=destination).
 hdiutil detach "${SCRIPT_DIR}/InstallESD/"
@@ -77,9 +75,9 @@ rm -rf "${SCRIPT_DIR}/InstallOS/"
 hdiutil resize -size $(hdiutil resize -limits "${SCRIPT_DIR}/BaseSystem_UDSP.sparseimage" | tail -n 1 | awk '{ print $1 }')b "${SCRIPT_DIR}/BaseSystem_UDSP.sparseimage"
 
 #----- Convert the sparseimage to a DMG file.
-hdiutil convert -format UDZO -o "${SCRIPT_DIR}/macOS_X_10.12.6-16G29_Sierra_Install_Disk" "${SCRIPT_DIR}/BaseSystem_UDSP.sparseimage"
+hdiutil convert -format UDZO -o "${SCRIPT_DIR}/macOS_X_10.13.6-17G66_High_Sierra_Install_Disk" "${SCRIPT_DIR}/BaseSystem_UDSP.sparseimage"
 
 #----- Convert the sparseimage to an ISO file.
-hdiutil convert -format UDTO -o "${SCRIPT_DIR}/macOS_X_10.12.6-16G29_Sierra_Install_Disk" "${SCRIPT_DIR}/BaseSystem_UDSP.sparseimage"
-mv "${SCRIPT_DIR}/macOS_X_10.12.6-16G29_Sierra_Install_Disk.cdr" "${SCRIPT_DIR}/macOS_X_10.12.6-16G29_Sierra_Install_Disk.iso"
+hdiutil convert -format UDTO -o "${SCRIPT_DIR}/macOS_X_10.13.6-17G66_High_Sierra_Install_Disk" "${SCRIPT_DIR}/BaseSystem_UDSP.sparseimage"
+mv "${SCRIPT_DIR}/macOS_X_10.13.6-17G66_High_Sierra_Install_Disk.cdr" "${SCRIPT_DIR}/macOS_X_10.13.6-17G66_High_Sierra_Install_Disk.iso"
 rm -f "${SCRIPT_DIR}/BaseSystem_UDSP.sparseimage"
